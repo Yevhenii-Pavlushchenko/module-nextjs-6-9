@@ -1,0 +1,14 @@
+.noteItem{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    background-color: gray ;
+    border-radius: 8px;
+    /* margin-bottom: 12px; */
+    max-width: 320px;
+}
+
+.noteItem:hover{
+    background-color: darkgray;
+    transition: 200ms;
+}
