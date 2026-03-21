@@ -1,0 +1,16 @@
+.titleList{
+    margin-bottom: 20px;
+}
+.btnGetNotes{
+    width: 150px;
+    cursor: pointer;
+    padding: 12px;
+    background-color:grey;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: none;
+    &:hover{
+        background-color: darkgray;
+    }
+}
+
