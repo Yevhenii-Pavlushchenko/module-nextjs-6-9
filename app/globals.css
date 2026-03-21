@@ -26,6 +26,7 @@ body {
   flex-direction: column;
   color: var(--foreground);
   background: var(--background);
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,4 +47,8 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+main {
+  flex-grow: 1;
 }

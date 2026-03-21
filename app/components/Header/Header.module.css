@@ -1,0 +1,28 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px;
+    border-block-end: 1px solid #ccc;
+    background-color: gray;
+}
+
+.logo:hover{
+    color: orange;
+    transition: 200ms;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    list-style-type: none;
+}
+
+.navItem:hover{
+    color: orange;
+    transition: 200ms;
+}
