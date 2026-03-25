@@ -3,33 +3,46 @@
 import { getSingleNote } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/dist/client/components/navigation";
-
-
+import { useRouter } from "next/navigation";
 
 const NoteDetailsClient = () => {
+  const { id } = useParams<{ id: string }>();
+  const router = useRouter();
 
-    const { id } = useParams<{ id: string }>();
+  const {
+    data: note,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["note", id],
+    queryFn: () => getSingleNote(id),
+    refetchOnMount: false,
+  });
 
-    const { data: note, isLoading, error } = useQuery({
-        queryKey: ["note", id],
-        queryFn: () => getSingleNote(id),
-        refetchOnMount: false,
-    });
+  const handleGoBack = () => {
+    const isSure = confirm("Areyou sure?");
+    if (isSure) {
+      router.back();
+    }
+    
+  };
 
-    if (isLoading) return <p>Loading...</p>;
-    if (error || !note) return <p>Some error...</p>;
+  if (isLoading) return <p>Loading...</p>;
+  if (error || !note) return <p>Some error...</p>;
 
-      const formattedDate = note.updatedAt
+  const formattedDate = note.updatedAt
     ? `Updated at: ${note.updatedAt}`
     : `Created at: ${note.createdAt}`;
 
-    return (
-         <div>
+ 
+
+  return (
+    <div>
+      <button onClick={handleGoBack}>Go Home</button>
       <h2>{note.title}</h2>
       <p>{note.content}</p>
       <p>{formattedDate}</p>
     </div>
-    
-    )
-}
+  );
+};
 export default NoteDetailsClient;

@@ -52,3 +52,46 @@ a {
 main {
   flex-grow: 1;
 }
+
+button {
+  display: block;
+  background-color: grey;
+  padding: 10px;
+  width: 120px;
+  border: none;
+  margin: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+}
+
+
+button:hover {
+  background-color: darkgrey;
+}
+
+
+button:active {
+  background-color: white;
+  color: yellow;
+  transform: scale(0.98);
+
+}
+
+.mainTitle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  gap: 20px;
+
+}
